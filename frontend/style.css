@@ -1,13 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
+    font-family: "Inter", serif;
 }
 
 html,body{
     width: 100%;
     height: 100%;
+}
+
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 13, 0, 0.793);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(255, 51, 0, 0.232);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
 }
 
 #nav{
@@ -23,12 +43,14 @@ html,body{
 }
 
 #nav img{
-    height: 140px;
+    height: 130px;
 }
 
 #nav h4{
+    color: #fff;
     text-transform: uppercase;
-    font-weight: 100;
+    font-weight: 550;
+    font-size: 25px;
 }
 
 video{
@@ -53,37 +75,340 @@ video{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    z-index: 10;
 }
 
 #page1 h1{
-    font-size: 35px;
-    font-weight: 800;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 500;
     position: relative;
 }
 
 #page1 h1::before{
     content: "WELCOME TO SUMMIT ENGLISH BOARDING HIGH SCHOOL";
     position: absolute;
-    color: rgba(255, 0, 0, 0.937);
-    top: -3px;
-    left: -3px;
-    -webkit-text-stroke: 2px rgba(255, 0, 0, 0.388);
+    color: rgba(255, 153, 0, 0.937);
+    top: -1px;
+    left: -1px;
+    -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
     z-index: -1;
 }
 
 #page1 h2{
-    font-size: 33px;
-    font-weight: 700;
-    margin-top: 5px;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    margin-top: 2px;
     margin-bottom: 5px;
 }
 
+#page1 h2::before{
+    content: "Butwal-3, Rupandehi";
+    position: absolute;
+    color: rgba(255, 153, 0, 0.937);
+    top: -1px;
+    left: -1px;
+    -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
+    z-index: -1;
+}
+
 #page1 h3{
-    font-size: 20px;
-    font-weight: 600;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+#page1 h3::before{
+    content: "Estd. 2050";
+    position: absolute;
+    color: rgba(255, 153, 0, 0.937);
+    top: -1px;
+    left: -1px;
+    -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
+    z-index: -1;
 }
 
 #page2 {
     height: 100vh;
     width: 100%;
+    z-index: 10;
 }
+
+#school-gallery h2{
+    color: #fff;
+    font-size: 150px;
+    text-align: center;
+}
+
+#school-gallery h2::before{
+    font-size: 150px;
+    content: "Our gallery";
+    position: absolute;
+    color: rgba(255, 153, 0, 0.937);
+    top: -1px;
+    left: -1px;
+    -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
+    z-index: -1;
+    padding-left: 765px;
+}
+
+#page3{
+    height: 100vh;
+    width: 100%;
+}
+
+#page4{
+    height: 100vh;
+    width: 100%;
+}
+
+#page5{
+    height: 100vh;
+    width: 100%;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 20S;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 10px;
+    color: transparent;
+    transition: all linear 0.4s;
+    -webkit-text-stroke: 2px rgb(14, 122, 180);
+}
+
+#scroller h4:hover{
+    color: rgb(14, 122, 180);
+}
+
+@keyframes scroll {
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#Introduction{
+    height: 40vh;
+    width: 100%;
+    /*background-color: red;*/
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+    justify-content: space-around;
+}
+
+#Introduction img{
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#intro-in{
+    width: 50%;
+    text-align: center;
+}
+
+#intro-in h3{
+    color: #fff;
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+#intro-in h3::before{
+    content: "Introduction";
+    position: absolute;
+    color: rgba(255, 153, 0, 0.937);
+    top: -1px;
+    left: -1px;
+    -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
+    z-index: -1;
+    padding-left: 400px;
+}
+
+#intro-in p{
+    color: #fff;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 26px;
+}
+
+#cards-container{
+    /*background-color: red;*/
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    gap: 10px;
+    z-index: 10;
+}
+
+.card{
+    height: 60%;
+    width: 50%;
+    /*background-color: blue;*/
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#cards-container1{
+    /*background-color: red;*/
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+
+.cards{
+    height: 60%;
+    width: 50%;
+    /*background-color: blue;*/
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/456684506_1791129214960926_2906144675304027582_n.jpg?stp=c120.0.720.720a_cp6_dst-jpg_s206x206_tt6&_nc_cat=100&ccb=1-7&_nc_sid=50ad20&_nc_ohc=TeinAVCylZ8Q7kNvgFUeHmF&_nc_oc=AdikxRLRXcJ6RKpKGduldYE3CpRzk-Klt5ye7gizBoweBbcuAaaGaWGye7pYMea4kIZa1BUmwFjRRzjdDo0_mmHd&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=AoV13RPodR2lwguYXj12KYD&oh=00_AYCBP8TBfwqZh0-GlmMfvpDM-2AfM9TMwcf6zv3FQp5V-Q&oe=679D1669);
+}
+
+#card2{
+   background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/443842662_1725935528146962_118309684079259764_n.jpg?stp=c555.0.938.938a_cp6_dst-jpg_s206x206_tt6&_nc_cat=103&ccb=1-7&_nc_sid=50ad20&_nc_ohc=dpgA9QV8KPQQ7kNvgFIqCfT&_nc_oc=AdglpkslqDuC_3_yiQ5i7W5_bmBYZXdo7_N8w_CfxD4Ka4jR-UnkVnU37K24qu-cCve-AuUp6XqzyWsIDz1Ft9io&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=AvWGPtbAVodgAEAP4RgFmoR&oh=00_AYDH5o3EEA0F096ulGazljNmyBYZI7tQ-xhGfMMwvU4rcQ&oe=679CE868); 
+}
+
+#card3{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/457285811_1794883071252207_7556335623900354054_n.jpg?stp=c256.0.1536.1536a_cp6_dst-jpg_s206x206_tt6&_nc_cat=102&ccb=1-7&_nc_sid=50ad20&_nc_ohc=JERD4d6Hm_8Q7kNvgECgz6B&_nc_oc=Adhl5hBVkFASLnElbRA59xWgOKy2_pLx0g3Mx_cJysoR1ohdILJ8YXnX3-soDLzSsbtlh6qQ13wB3hlQCa6wpjoS&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=ABYexNkzXLV4Qq2Om1S1oj1&oh=00_AYDGKA3t8GBfvkXUjS7ct3ejn7zbJyo48Mqv00J_tOQKpQ&oe=679D0918);
+}
+
+#card4{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436108215_1704416853632163_228382996365421500_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=92e838&_nc_ohc=wj6m_l5ifz8Q7kNvgEDd-dk&_nc_oc=AdiaWJuBYgmxaS_7DFUJ_WhAEvxAF6kxhES19nYs4Pq-mWkkEl1rKTJ03TYuEglzReEtGmsnBjrF_UmwdISGl0ne&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=A4KytUN2wIYUHs9JCZPEt1m&oh=00_AYBg3l9Zp38j17GJgkIHka2n5eyVnCVC3RPxIItR-dg5Mw&oe=679CF766);
+}
+
+#cards1{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/441187299_1723670575040124_1230639721826440588_n.jpg?stp=c200.0.1200.1200a_dst-jpg_s206x206_tt6&_nc_cat=108&ccb=1-7&_nc_sid=714c7a&_nc_ohc=1HFdRQyHqoIQ7kNvgF2HC7m&_nc_oc=AdipW_fM9MCsQDHCqotG1KNDbbvjbFXy3CDq0Xcq03KN9lVo_JX__RMZJoA1EpuvLZG9BECbPJGsd6boL3A-1L7D&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=Av_6VbsGnV83lL93N60oOZl&oh=00_AYCT4rMpTZByS633JWX_nN8BWMbtZRsmV1vcHpl7P8E9zg&oe=679CFD72);
+}
+
+#cards2{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436348090_1704913656915816_2095623121185802303_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=109&ccb=1-7&_nc_sid=92e838&_nc_ohc=DT0-vnk8S6AQ7kNvgGXF9wv&_nc_oc=AdiLTG-TCmK-clRSwfUJJ9lerJZTNBYN1jVrDfVQBv847zlI7vzGTD9qwvEF63ixdQsc75azR3b2UsllWRsc_bkh&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=AdTsf1kACl-hhh24cwOY3OX&oh=00_AYBEiAyMogIkzkkY74z-omr0jQd_ctCppCRgSmT92TxKeg&oe=679CF71E);
+}
+
+#cards3{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436351345_1704423060298209_7955362583327548055_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=103&ccb=1-7&_nc_sid=92e838&_nc_ohc=0-R4CeSEgAwQ7kNvgH-rpL0&_nc_oc=Adh0HdCyCzQH1kyyHl1sioYr48nMyiLhWm5O6Aa4q3QqJ8PE933w3prFvI0hleBFIHEouw40szYhgj8NRHiiWsus&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=A17MXbPjW3ZhNo4C7beZySy&oh=00_AYBy18Ar8jQww9omHzOQyHOYavByQHADKLsE7BBmqH4iYQ&oe=679D0F9B);
+}
+
+#cards4{
+    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436297644_1704395553634293_4027234380415860112_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=111&ccb=1-7&_nc_sid=92e838&_nc_ohc=cRrNEe9ESPYQ7kNvgFb1N5v&_nc_oc=AdgaUvQ7GNRoRW7PNPD_jyg-GSh1lWHxPUhzNs0W_NPTa6umsb_8I38JJiEKMtUwMYyyJ_CxkjQykDCOQbc8nvz3&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=ALvFSun5WRcIxxim6ksOZ6f&oh=00_AYB2aAkXigyJ7BhQy7YJ-AA8QhkLF1jdbRgECPwHUQUadg&oe=679D0DEC);
+}
+
+/*.containers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card-list .card-item{
+    list-style: none;
+}
+
+.card-list .card-item .card-link{
+    user-select: none;
+    display: block;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:hover{
+    border: #5372F0;
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge{
+    color: #5372F0;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    background: #dde4ff;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.card-list .card-link .card-title{
+    font-size: 1.19rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.card-list .card-link .card-button{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    border: 2px solid#5372F0;
+    color: #5372F0;
+    background: none;
+    cursor: pointer;
+    transform: rotate(-45deg);
+}
+
+.card-list .card-link:hover .card-button{
+    color: #fff;
+    background: #5372F0;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }*/
