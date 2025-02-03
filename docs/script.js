@@ -27,7 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Animate the #nav element
 gsap.to("#nav", {
   duration: 0.5,
-  height: "130px",
+  height: "150px",
   background: " linear-gradient(to left, red, blue)", // Changes background color to black
   scrollTrigger: {
     trigger: "#nav", // The element that triggers the animation
