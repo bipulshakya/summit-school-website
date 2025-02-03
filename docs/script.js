@@ -1,3 +1,5 @@
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 const crsr = document.querySelector("#cursor")
 const blur = document.querySelector("#cursor-blur")
 document.addEventListener("mousemove", function (dets) {
