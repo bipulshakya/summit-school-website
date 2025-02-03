@@ -1,10 +1,10 @@
 const crsr = document.querySelector("#cursor")
 const blur = document.querySelector("#cursor-blur")
-document.addEventListener("mousemove",function(dets){
-  crsr.style.left = dets.x+  "px"
-  crsr.style.top = dets.y+ "px"
-  blur.style.left = dets.x-200+"px"
-  blur.style.top = dets.y-200+"px"
+document.addEventListener("mousemove", function (dets) {
+  crsr.style.left = dets.x + "px"
+  crsr.style.top = dets.y + "px"
+  blur.style.left = dets.x - 200 + "px"
+  blur.style.top = dets.y - 200 + "px"
 })
 
 var h4all = document.querySelectorAll("#nav h4");
@@ -35,11 +35,11 @@ gsap.to("#nav", {
     //markers: true,
     start: "top -10%",
     end: "top -11%",
-    scrub:1,
+    scrub: 1,
   },
 });
 
-gsap.to("#main",{
+gsap.to("#main", {
   backgroundColor: "#000",
   scrollTrigger: {
     trigger: "#main",
@@ -47,7 +47,7 @@ gsap.to("#main",{
     //markers: true,
     start: "top -30%",
     end: "top -80%",
-    scrub:1,
+    scrub: 1,
   },
 });
 
@@ -95,7 +95,7 @@ gsap.from(".cards", {
   },
 });
 
-gsap.from(".cards, .card",{
+gsap.from(".cards, .card", {
   y: 90,
   opacity: 0,
   duration: 1,
@@ -124,18 +124,18 @@ gsap.from("#school-gallery", {
 });
 
 // new Swiper('.card-wrapper', {
-  //loop: true, //
+//loop: true, //
 
-  // If we need pagination
- // pagination: {
-   // el: '.swiper-pagination',
-  //}, 
+// If we need pagination
+// pagination: {
+// el: '.swiper-pagination',
+//}, 
 
-  // Navigation arrows
- // navigation: {
-  //  nextEl: '.swiper-button-next',
+// Navigation arrows
+// navigation: {
+//  nextEl: '.swiper-button-next',
 //prevEl: '.swiper-button-prev',
-  //},
+//},
 //}); 
 
 gsap.from("#colon1", {
