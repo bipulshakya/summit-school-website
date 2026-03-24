@@ -32,26 +32,58 @@ body {
     z-index: 9;
 }
 
+/* ===== NAV — transparent on homepage (video shows through), solid on inner pages ===== */
 #nav {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 50px;
-    padding: 0 150px;
+    gap: 40px;
+    padding: 0 80px;
     position: fixed;
-    z-index: 99;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: linear-gradient(to right, #0a0118, #0d1b3e);
+    height: 80px;
+    transition: all 0.4s ease;
+}
+
+/* Homepage overrides — transparent over video */
+body.has-video #nav {
+    background: transparent;
+    height: auto;
+    padding: 0 150px;
+}
+
+body.has-video #nav img {
+    height: 130px;
 }
 
 #nav img {
-    height: 130px;
+    height: 60px;
+    width: auto;
 }
 
 #nav a {
     color: #fff;
     text-transform: uppercase;
-    font-weight: 550;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+#nav a:hover {
+    opacity: 0.7;
+}
+
+/* Inner pages need padding-top so content doesn't hide behind fixed nav */
+body.inner-page {
+    padding-top: 80px;
+    background: #060612;
 }
 
 video {
@@ -70,7 +102,6 @@ video {
 
 #page1 {
     width: 100%;
-    /*vh = view port height*/
     height: 120vh;
     position: relative;
     display: flex;
@@ -135,27 +166,38 @@ video {
 }
 
 #page2 {
-    height: 180vh;
+    height: 250vh;
     width: 100%;
     z-index: 10;
 }
 
+#school-gallery {
+    padding: 40px 0 20px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
 #school-gallery h2 {
     color: #fff;
-    font-size: 150px;
+    font-size: clamp(60px, 10vw, 150px);
     text-align: center;
+    position: relative;
+    display: block;
+    width: 100%;
 }
 
 #school-gallery h2::before {
-    font-size: 150px;
     content: "Our gallery";
     position: absolute;
+    font-size: clamp(60px, 10vw, 150px);
     color: rgba(255, 153, 0, 0.937);
-    top: -1px;
-    left: -1px;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
     z-index: -1;
-    padding-left: 765px;
+    white-space: nowrap;
 }
 
 #scroller {
@@ -205,15 +247,15 @@ video {
 }
 
 #Introduction {
-    height: 40vh;
+    min-height: 60vh;
     width: 100%;
-    /*background-color: red;*/
     display: flex;
     align-items: center;
     position: relative;
     z-index: 10;
-    padding: 0 20px;
+    padding: 60px 40px;
     justify-content: space-around;
+    gap: 30px;
 }
 
 #Introduction img {
@@ -221,6 +263,7 @@ video {
     width: 300px;
     border-radius: 20px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 #intro-in {
@@ -233,100 +276,109 @@ video {
     font-size: 54px;
     font-weight: 800;
     margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
 }
 
 #intro-in h3::before {
     content: "Introduction";
     position: absolute;
     color: rgba(255, 153, 0, 0.937);
-    top: -1px;
-    left: -1px;
+    top: -2px;
+    left: -2px;
     -webkit-text-stroke: 2px rgba(255, 162, 0, 0.893);
     z-index: -1;
-    padding-left: 400px;
+    white-space: nowrap;
 }
 
 #intro-in p {
     color: #fff;
     font-weight: 200;
-    font-size: 25px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 30px;
 }
 
-#cards-container {
-    /*background-color: red;*/
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-    gap: 10px;
-    z-index: 10;
-}
-
-.card {
-    height: 60%;
-    width: 50%;
-    /*background-color: blue;*/
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    transition: all ease 0.6s;
-}
-
-#cards-container1 {
-    /*background-color: red;*/
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
+/* ===== SWIPER GALLERY SECTION ===== */
+#gallery-swiper-section {
+    width: 90%;
+    margin: 40px auto;
     position: relative;
     z-index: 10;
-}
-
-.cards {
-    height: 60%;
-    width: 50%;
-    /*background-color: blue;*/
     border-radius: 20px;
-    background-size: cover;
-    background-position: center;
     overflow: hidden;
-    transition: all ease 0.6s;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
-#card1 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/456684506_1791129214960926_2906144675304027582_n.jpg?stp=c120.0.720.720a_cp6_dst-jpg_s206x206_tt6&_nc_cat=100&ccb=1-7&_nc_sid=50ad20&_nc_ohc=TeinAVCylZ8Q7kNvgFUeHmF&_nc_oc=AdikxRLRXcJ6RKpKGduldYE3CpRzk-Klt5ye7gizBoweBbcuAaaGaWGye7pYMea4kIZa1BUmwFjRRzjdDo0_mmHd&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=AoV13RPodR2lwguYXj12KYD&oh=00_AYCBP8TBfwqZh0-GlmMfvpDM-2AfM9TMwcf6zv3FQp5V-Q&oe=679D1669);
+.gallery-swiper {
+    width: 100%;
+    height: 65vh;
+    border-radius: 20px;
 }
 
-#card2 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/443842662_1725935528146962_118309684079259764_n.jpg?stp=c555.0.938.938a_cp6_dst-jpg_s206x206_tt6&_nc_cat=103&ccb=1-7&_nc_sid=50ad20&_nc_ohc=dpgA9QV8KPQQ7kNvgFIqCfT&_nc_oc=AdglpkslqDuC_3_yiQ5i7W5_bmBYZXdo7_N8w_CfxD4Ka4jR-UnkVnU37K24qu-cCve-AuUp6XqzyWsIDz1Ft9io&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=AvWGPtbAVodgAEAP4RgFmoR&oh=00_AYDH5o3EEA0F096ulGazljNmyBYZI7tQ-xhGfMMwvU4rcQ&oe=679CE868);
+.gallery-swiper .swiper-slide {
+    position: relative;
+    overflow: hidden;
 }
 
-#card3 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/457285811_1794883071252207_7556335623900354054_n.jpg?stp=c256.0.1536.1536a_cp6_dst-jpg_s206x206_tt6&_nc_cat=102&ccb=1-7&_nc_sid=50ad20&_nc_ohc=JERD4d6Hm_8Q7kNvgECgz6B&_nc_oc=Adhl5hBVkFASLnElbRA59xWgOKy2_pLx0g3Mx_cJysoR1ohdILJ8YXnX3-soDLzSsbtlh6qQ13wB3hlQCa6wpjoS&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=ABYexNkzXLV4Qq2Om1S1oj1&oh=00_AYDGKA3t8GBfvkXUjS7ct3ejn7zbJyo48Mqv00J_tOQKpQ&oe=679D0918);
+.gallery-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-#card4 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436108215_1704416853632163_228382996365421500_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=92e838&_nc_ohc=wj6m_l5ifz8Q7kNvgEDd-dk&_nc_oc=AdiaWJuBYgmxaS_7DFUJ_WhAEvxAF6kxhES19nYs4Pq-mWkkEl1rKTJ03TYuEglzReEtGmsnBjrF_UmwdISGl0ne&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=A4KytUN2wIYUHs9JCZPEt1m&oh=00_AYBg3l9Zp38j17GJgkIHka2n5eyVnCVC3RPxIItR-dg5Mw&oe=679CF766);
+.gallery-swiper .swiper-slide:hover img {
+    transform: scale(1.05);
 }
 
-#cards1 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/441187299_1723670575040124_1230639721826440588_n.jpg?stp=c200.0.1200.1200a_dst-jpg_s206x206_tt6&_nc_cat=108&ccb=1-7&_nc_sid=714c7a&_nc_ohc=1HFdRQyHqoIQ7kNvgF2HC7m&_nc_oc=AdipW_fM9MCsQDHCqotG1KNDbbvjbFXy3CDq0Xcq03KN9lVo_JX__RMZJoA1EpuvLZG9BECbPJGsd6boL3A-1L7D&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=Av_6VbsGnV83lL93N60oOZl&oh=00_AYCT4rMpTZByS633JWX_nN8BWMbtZRsmV1vcHpl7P8E9zg&oe=679CFD72);
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 30px 30px 20px;
+    z-index: 5;
 }
 
-#cards2 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436348090_1704913656915816_2095623121185802303_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=109&ccb=1-7&_nc_sid=92e838&_nc_ohc=DT0-vnk8S6AQ7kNvgGXF9wv&_nc_oc=AdiLTG-TCmK-clRSwfUJJ9lerJZTNBYN1jVrDfVQBv847zlI7vzGTD9qwvEF63ixdQsc75azR3b2UsllWRsc_bkh&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=AdTsf1kACl-hhh24cwOY3OX&oh=00_AYBEiAyMogIkzkkY74z-omr0jQd_ctCppCRgSmT92TxKeg&oe=679CF71E);
+.gallery-swiper .swiper-button-prev,
+.gallery-swiper .swiper-button-next {
+    color: #fff;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: background 0.3s ease;
 }
 
-#cards3 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436351345_1704423060298209_7955362583327548055_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=103&ccb=1-7&_nc_sid=92e838&_nc_ohc=0-R4CeSEgAwQ7kNvgH-rpL0&_nc_oc=Adh0HdCyCzQH1kyyHl1sioYr48nMyiLhWm5O6Aa4q3QqJ8PE933w3prFvI0hleBFIHEouw40szYhgj8NRHiiWsus&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=A17MXbPjW3ZhNo4C7beZySy&oh=00_AYBy18Ar8jQww9omHzOQyHOYavByQHADKLsE7BBmqH4iYQ&oe=679D0F9B);
+.gallery-swiper .swiper-button-prev:hover,
+.gallery-swiper .swiper-button-next:hover {
+    background: rgba(255,255,255,0.3);
 }
 
-#cards4 {
-    background-image: url(https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/436297644_1704395553634293_4027234380415860112_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s206x206_tt6&_nc_cat=111&ccb=1-7&_nc_sid=92e838&_nc_ohc=cRrNEe9ESPYQ7kNvgFb1N5v&_nc_oc=AdgaUvQ7GNRoRW7PNPD_jyg-GSh1lWHxPUhzNs0W_NPTa6umsb_8I38JJiEKMtUwMYyyJ_CxkjQykDCOQbc8nvz3&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=ALvFSun5WRcIxxim6ksOZ6f&oh=00_AYB2aAkXigyJ7BhQy7YJ-AA8QhkLF1jdbRgECPwHUQUadg&oe=679D0DEC);
+.gallery-swiper .swiper-button-prev::after,
+.gallery-swiper .swiper-button-next::after {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.gallery-swiper .swiper-pagination-bullet {
+    background: rgba(255,255,255,0.6);
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+    background: #fff;
+    width: 28px;
+    border-radius: 5px;
 }
 
 #green-div {
@@ -555,10 +607,39 @@ video {
 }
 
 #f2 h3 {
-    font-size: 1.6vw;
+    font-size: 1.3vw;
     white-space: nowrap;
     text-transform: uppercase;
-    color: #000;
-    font-weight: 900;
+    color: #fff;
+    font-weight: 600;
     margin-bottom: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#f2 h3:hover, #f3 h3:hover {
+    opacity: 0.7;
+}
+
+#f3 h3 {
+    font-size: 1.3vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#f4 h4 {
+    color: #fff;
+    font-size: 1vw;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+#f2 h3 a, #f3 h3 a {
+    color: #fff;
+    text-decoration: none;
 }
