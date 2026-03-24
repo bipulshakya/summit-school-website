@@ -58,15 +58,28 @@ if (typeof gsap !== 'undefined') {
 
   // Animations that only matter if element exists
   if (document.querySelector("#Introduction")) {
-    gsap.from("#Introduction img,#intro-in", {
-      y: 90,
+    gsap.from("#Introduction img", {
+      x: -80,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#Introduction",
+        scroller: "body",
+        start: "top 85%",
+        end: "top 40%",
+        scrub: 2,
+      },
+    });
+    gsap.from("#intro-in", {
+      y: 50,
       opacity: 0,
       duration: 1,
       scrollTrigger: {
         trigger: "#Introduction",
         scroller: "body",
-        start: "top 70%",
-        end: "top 65%",
+        start: "top 80%",
+        end: "top 35%",
         scrub: 2,
       },
     });
@@ -89,15 +102,15 @@ if (typeof gsap !== 'undefined') {
   }
 
   if (document.querySelector("#school-gallery")) {
-    gsap.from("#school-gallery", {
-      y: 90,
+    gsap.from("#school-gallery h2", {
+      y: 60,
       opacity: 0,
       duration: 1,
       scrollTrigger: {
         trigger: "#school-gallery",
         scroller: "body",
-        start: "top 70%",
-        end: "top 65%",
+        start: "top 90%",
+        end: "top 40%",
         scrub: 2,
       },
     });
