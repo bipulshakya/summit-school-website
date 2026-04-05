@@ -52,17 +52,23 @@ body {
 /* Homepage overrides — transparent over video */
 body.has-video #nav {
     background: transparent;
-    height: auto;
+    height: 90px;
     padding: 0 150px;
 }
 
 body.has-video #nav img {
-    height: 130px;
+    height: 84px;
 }
 
 #nav img {
+    display: block;
     height: 60px;
     width: auto;
+}
+
+#nav a:first-child {
+    display: flex;
+    align-items: center;
 }
 
 #nav a {
