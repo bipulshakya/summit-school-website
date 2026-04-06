@@ -146,6 +146,42 @@
         }
         .empty-state span { font-size: 3rem; display: block; margin-bottom: 12px; }
 
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 240px;
+                padding: 34px 18px 24px;
+            }
+            .page-hero::before,
+            .page-hero::after {
+                width: 240px;
+                height: 240px;
+            }
+            .notice-section {
+                padding: 32px 16px 44px;
+            }
+            .notice-filters {
+                gap: 8px;
+                margin-bottom: 22px;
+            }
+            .filter-btn {
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+            .notices-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .notice-card {
+                padding: 16px;
+            }
+            .notice-card h3 {
+                font-size: 0.95rem;
+            }
+            .notice-card p {
+                font-size: 0.84rem;
+            }
+        }
+
         /* Footer override */
         #footer { background: linear-gradient(to right, #0a0118, #0d1b3e); }
     </style>

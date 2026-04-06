@@ -77,6 +77,34 @@
             transform:translateY(100px);opacity:0;transition:all 0.35s;
         }
         .success-toast.show { transform:translateY(0);opacity:1; }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 230px;
+                padding: 34px 18px 22px;
+            }
+            .page-hero::before {
+                width: 230px;
+                height: 230px;
+                top: -70px;
+                right: 0;
+            }
+            .map-section {
+                padding: 12px 24px 40px;
+            }
+            .map-section h2 {
+                font-size: 1.2rem;
+                padding: 20px 0 14px;
+            }
+            .success-toast {
+                right: 14px;
+                left: 14px;
+                bottom: 14px;
+                font-size: 0.82rem;
+                padding: 12px 14px;
+            }
+        }
+
         #footer { background: linear-gradient(to right, #0a0118, #0d1b3e); }
     </style>
 </head>

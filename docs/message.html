@@ -79,6 +79,32 @@
             background:linear-gradient(90deg,transparent,rgba(99,102,241,0.3),transparent);
             margin:0 0 70px;
         }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 230px;
+                padding: 34px 18px 22px;
+            }
+            .page-hero::before {
+                width: 220px;
+                height: 220px;
+            }
+            .message-visual {
+                height: 240px;
+                font-size: 3.5rem;
+            }
+            .message-content h2 {
+                font-size: 1.35rem;
+            }
+            .message-content p {
+                font-size: 0.88rem;
+                line-height: 1.75;
+            }
+            .block-divider {
+                margin: 0 0 40px;
+            }
+        }
+
         #footer { background: linear-gradient(to right, #0a0118, #0d1b3e); }
     </style>
 </head>
