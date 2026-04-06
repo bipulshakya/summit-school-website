@@ -158,6 +158,18 @@ if (typeof gsap !== 'undefined') {
 
 // Initialize Swiper gallery
 if (document.querySelector(".gallery-swiper")) {
+  // Fallback to local image when external gallery sources fail.
+  document.querySelectorAll(".gallery-swiper img").forEach((img) => {
+    img.addEventListener("error", () => {
+      if (img.dataset.fallbackApplied === "true") return;
+      img.dataset.fallbackApplied = "true";
+      img.src = "imges/logo.png";
+      img.style.objectFit = "contain";
+      img.style.backgroundColor = "#0a0a18";
+      img.style.padding = "14px";
+    });
+  });
+
   new Swiper(".gallery-swiper", {
     loop: true,
     autoplay: {
