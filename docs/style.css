@@ -64,6 +64,12 @@ body.has-video #nav img {
     display: block;
     height: 60px;
     width: auto;
+    display: block;
+}
+
+#nav a:first-child {
+    display: flex;
+    align-items: center;
 }
 
 #nav a:first-child {
