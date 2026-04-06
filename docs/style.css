@@ -61,15 +61,9 @@ body.has-video #nav img {
 }
 
 #nav img {
-    display: block;
     height: 60px;
     width: auto;
     display: block;
-}
-
-#nav a:first-child {
-    display: flex;
-    align-items: center;
 }
 
 #nav a:first-child {
@@ -96,6 +90,16 @@ body.has-video #nav img {
 body.inner-page {
     padding-top: 80px;
     background: #060612;
+}
+
+/* Keep nav alignment consistent with Home/Staff pages */
+body.inner-page #nav {
+    height: 90px;
+    padding: 0 150px;
+}
+
+body.inner-page #nav img {
+    height: 84px;
 }
 
 video {
@@ -654,4 +658,294 @@ video {
 #f2 h3 a, #f3 h3 a {
     color: #fff;
     text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    #nav {
+        gap: 22px;
+        padding: 0 28px;
+    }
+
+    body.has-video #nav,
+    body.inner-page #nav {
+        padding: 0 28px;
+    }
+
+    #nav a {
+        font-size: 0.82rem;
+    }
+
+    #page1 h1,
+    #page1 h2 {
+        font-size: 46px;
+    }
+
+    #page1 h3 {
+        font-size: 24px;
+    }
+
+    #scroller h4 {
+        font-size: 88px;
+    }
+
+    #Introduction {
+        padding: 50px 24px;
+        gap: 20px;
+    }
+
+    #intro-in {
+        width: 60%;
+    }
+
+    #intro-in h3 {
+        font-size: 42px;
+    }
+
+    #intro-in p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    #Introduction img {
+        height: 240px;
+        width: 240px;
+    }
+
+    #page4 {
+        gap: 28px;
+        padding: 0 18px;
+    }
+
+    .elem {
+        width: 30%;
+    }
+
+    #footer {
+        padding: 24px 38px;
+        gap: 26px;
+        min-height: 220px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    #f2 h3,
+    #f3 h3 {
+        font-size: 0.95rem;
+    }
+
+    #f4 h4 {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #cursor,
+    #cursor-blur {
+        display: none;
+    }
+
+    #nav {
+        gap: 10px;
+        min-height: 72px;
+        height: auto;
+        padding: 10px 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body.has-video #nav,
+    body.inner-page #nav {
+        gap: 10px;
+        min-height: 72px;
+        height: auto;
+        padding: 10px 14px;
+    }
+
+    body.has-video #nav {
+        background: rgba(6, 6, 18, 0.9);
+        backdrop-filter: blur(6px);
+    }
+
+    #nav a:first-child {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #nav img,
+    body.has-video #nav img,
+    body.inner-page #nav img {
+        height: 64px;
+    }
+
+    #nav a {
+        font-size: 0.72rem;
+        letter-spacing: 0.25px;
+    }
+
+    body.inner-page {
+        padding-top: 130px;
+    }
+
+    #page1 {
+        min-height: 88vh;
+        height: auto;
+        padding: 30px 16px;
+    }
+
+    #page1 h1,
+    #page1 h2 {
+        font-size: 34px;
+        line-height: 1.15;
+    }
+
+    #page1 h3 {
+        font-size: 20px;
+    }
+
+    #page2 {
+        height: auto;
+    }
+
+    #school-gallery {
+        padding: 22px 0 10px;
+    }
+
+    #scroller h4 {
+        font-size: 56px;
+        margin-right: 8px;
+        -webkit-text-stroke: 1px rgb(14, 122, 180);
+    }
+
+    #Introduction {
+        min-height: auto;
+        padding: 28px 16px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #Introduction img {
+        width: min(88vw, 320px);
+        height: min(88vw, 320px);
+    }
+
+    #intro-in {
+        width: 100%;
+    }
+
+    #intro-in h3 {
+        font-size: 34px;
+        margin-bottom: 16px;
+    }
+
+    #intro-in p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    #gallery-swiper-section {
+        width: 94%;
+        margin: 18px auto 28px;
+    }
+
+    .gallery-swiper {
+        height: 42vh;
+    }
+
+    .slide-caption {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        padding: 16px 14px 12px;
+    }
+
+    #green-div {
+        min-height: 120px;
+        height: auto;
+        padding: 16px;
+    }
+
+    #green-div h4 {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    #green-div img {
+        display: none;
+    }
+
+    #page3 {
+        min-height: 70vh;
+        height: auto;
+        padding: 50px 0;
+    }
+
+    #page3 > p {
+        width: 90%;
+        font-size: 22px;
+        line-height: 1.55;
+    }
+
+    #page3 #colon1,
+    #page3 #colon2 {
+        height: 34px;
+    }
+
+    #page4 {
+        min-height: auto;
+        height: auto;
+        flex-direction: column;
+        gap: 16px;
+        padding: 28px 14px 18px;
+    }
+
+    #page4 h1 {
+        position: static;
+        font-size: 10vw;
+        margin-bottom: 8px;
+    }
+
+    .elem {
+        width: 94%;
+        max-width: 420px;
+        height: 220px;
+    }
+
+    .elem h2 {
+        font-size: 24px;
+    }
+
+    #footer {
+        min-height: 250px;
+        height: auto;
+        padding: 22px 18px;
+        justify-content: center;
+        gap: 16px;
+        text-align: center;
+    }
+
+    #footer > img {
+        opacity: 0.15;
+    }
+
+    #f1,
+    #f2,
+    #f3,
+    #f4 {
+        width: 100%;
+    }
+
+    #f1 img {
+        height: 76px;
+        width: 76px;
+    }
+
+    #f2 h3,
+    #f3 h3 {
+        font-size: 0.9rem;
+    }
+
+    #f4 h4 {
+        font-size: 0.86rem;
+        line-height: 1.6;
+    }
 }
